@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 	function animalTastic() {
 		
+		// array of animals with the endangered status. The endagered status will let me place them in the correct ul
 		var animals = [
 			{
 				name: 'Amur Leopard',
@@ -229,7 +230,106 @@ $(document).ready(function(){
 			}
 		];
 
-		console.log(animals.length);
+		// variables
+		//var ul_array = [$('#critically-endangered'), $('#endangered'), $('#vulnerable'), $('#near-threatened'), $('#added-animals')]
+		var critically_endangered = $('#critically-endangered');
+		var endangered = $('#endangered');
+		var vulnerable = $('#vulnerable');
+		var near_threatened = $('#near-threatened');
+		var added_animals = $('#added-animals');
+
+		// functions
+
+		// the ajax request from giphy for the animal selected
+		function queryAnimals() {
+			// body...
+		} // end queryAnimals()
+
+		function displayAnimals() {
+			// body...
+		} // end displayAnimals()
+
+		function createButtons() {
+			
+			// enpty each of the ul elements so we can then repopulate them with updated buttons
+			critically_endangered.empty();
+			endangered.empty();
+			vulnerable.empty();
+			near_threatened.empty();
+			added_animals.empty();
+
+			// loop through the anials array
+			for (var i = 0; i < animals.length; i++) {
+
+				console.log(animals[i].status);
+
+				// create a list item to house the animal
+				var animals_li = $('<li>');
+
+				// set the class of this li to .animal
+				animals_li.addClass('animal');
+				
+				// switch statement for placing the animals in the correct ul
+				switch(animals[i].status) {
+
+					// if the animal's status is critically endangered
+					case 'Critically Endangered':
+
+						animalsToList(critically_endangered);
+
+						break;
+
+					// if the animal's status is critically endangered
+					case 'Endangered':
+
+						animalsToList(endangered);
+
+						break;
+
+					// if the animal's status is critically endangered
+					case 'Vulnerable':
+
+						animalsToList(vulnerable);
+
+						break;
+
+					// if the animal's status is critically endangered
+					case 'Near Threatened':
+
+						animalsToList(near_threatened);
+
+						break;
+
+					// if the animal's status is critically endangered
+					case 'Added Animals':
+
+						animalsToList(added_animals);
+
+						break;
+
+				} // end switch
+
+				function animalsToList(ul_element) {
+					
+					// set the data-name attribute to the name of the animal
+					animals_li.attr('data-name', animals[i].name);
+
+					// set the text of the li to the animal
+					animals_li.text(animals[i].name);
+
+					// append the li element to the critically-endangered ul 
+					ul_element.append(animals_li);
+
+				} // end animalsToList()
+
+			} // end for loop
+
+		} // end createButtons()
+
+		// on click events
+
+		// run functions
+		createButtons();
 
 	}
 		
