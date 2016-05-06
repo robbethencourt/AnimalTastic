@@ -264,10 +264,10 @@ $(document).ready(function(){
 				console.log(animals[i].status);
 
 				// create a list item to house the animal
-				var animals_li = $('<li>');
+				var animals_button = $('<button>');
 
 				// set the class of this li to .animal
-				animals_li.addClass('animal');
+				animals_button.addClass('animal list-group-item');
 				
 				// switch statement for placing the animals in the correct ul
 				switch(animals[i].status) {
@@ -312,13 +312,13 @@ $(document).ready(function(){
 				function animalsToList(ul_element) {
 					
 					// set the data-name attribute to the name of the animal
-					animals_li.attr('data-name', animals[i].name);
+					animals_button.attr('data-name', animals[i].name);
 
 					// set the text of the li to the animal
-					animals_li.text(animals[i].name);
+					animals_button.text(animals[i].name);
 
 					// append the li element to the critically-endangered ul 
-					ul_element.append(animals_li);
+					ul_element.append(animals_button);
 
 				} // end animalsToList()
 
