@@ -15,9 +15,99 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
 <body>
+
+	<!-- nav -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span> 
+  				</button>
+  				<a class="navbar-brand" href="#">AnimalTastic</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+  				<ul class="nav navbar-nav navbar-right">
+    				<li><a class="active" href="index.html">Animals</a></li>
+    				<li><a href="about.html">About</a></li>
+    				<li><a href="contact.html">Donate</a></li>
+  				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- jumbotron -->
+	<div class="jumbotron">
+		<div class="container">
+			<div id="jumbotron-content">
+				<h1>AnimalTastic</h1>
+				<p>Raising awarness of endangered animals through giphs</p>
+			</div>
+			<div id="animal-giphs"></div>
+		</div>
+	</div>
+
+	<!-- wrap the content in a container -->
+	<div class="container">
+
+		<!-- animals list -->
+		<div class="row">
+			<div class="col-xs-6">
+				<h3>Add Other Animals to Get Giphs of</h3>
+			</div>
+			<div class="col-xs-6">
+				<form id="add-animal-form">
+					<input type="text" placeholder="cat"></input>
+					<input type="submit" id="add-animal-button" value="Add Animal"></input>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<ul id="added-animals"></ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<h3>Critically Endangered</h3>
+				<ul id="critically-endangered"></ul>
+			</div>
+			<div class="col-sm-3">
+				<h3>Endangered</h3>
+				<div id="endangered"></div>
+			</div>
+			<div class="col-sm-3">
+				<h3>Vulnerable</h3>
+				<ul id="vulnerable"></ul>
+			</div>
+			<div class="col-sm-3">
+				<h3>Threatened</h3>
+				<ul id="threatened"></ul>
+			</div>
+		</div>
+
+		<!-- about -->
+		<h2>About AnimalTastic</h2>
+		<p>Some stuff about AnimalTastic and how the use of giphs will hope to raise awareness for endangered animals.</p>
+
+		<!-- donate -->
+		<h2>Donate to the WWF (not the wrestling federation)</h2>
+		<p><a href="https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly&s_src=AWG1610SS912&_ga=1.186797992.1805934068.1462546059" class="btn btn-success" target="_blank">DONATE</a></p>
+
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<p>&#169; 2016 Robert Bethencourt All Rights Reserved</p>
+		</div>
+	</footer>
 	
 	<!-- jQuery cdn -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<!-- Bootstrap Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- my own scripts -->
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 
