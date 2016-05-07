@@ -236,7 +236,7 @@ $(document).ready(function(){
 		var endangered = $('#endangered');
 		var vulnerable = $('#vulnerable');
 		var near_threatened = $('#near-threatened');
-		var added_animals = $('#added-animals');
+		var added_animal = $('#added-animal');
 
 		// functions
 
@@ -256,12 +256,10 @@ $(document).ready(function(){
 			endangered.empty();
 			vulnerable.empty();
 			near_threatened.empty();
-			added_animals.empty();
+			added_animal.empty();
 
 			// loop through the anials array
 			for (var i = 0; i < animals.length; i++) {
-
-				console.log(animals[i].status);
 
 				// create a list item to house the animal
 				var animals_button = $('<button>');
@@ -301,9 +299,9 @@ $(document).ready(function(){
 						break;
 
 					// if the animal's status is critically endangered
-					case 'Added Animals':
+					case 'Added Animal':
 
-						animalsToList(added_animals);
+						animalsToList(added_animal);
 
 						break;
 
@@ -327,6 +325,27 @@ $(document).ready(function(){
 		} // end createButtons()
 
 		// on click events
+		$('#add-animal-button').on('click', function () {
+
+			// get the value of the text box
+			var animal_to_add = $('#animal-input').val();
+
+			// create a new Animal object
+			var Animal = new Object();
+
+			// set the Animal object to the one entered and add the Added Animal status so that it sets it in the correct div on the page
+			Animal = {name: animal_to_add, status: 'Added Animal'};
+
+			// push the animal to add into the animals array
+			animals.push(Animal);
+
+			// run create buttons so that the new button with the added animal gets added
+			createButtons();
+
+			// return false so the form doesn't submit and refresh the page
+			return false;
+
+		});
 
 		// run functions
 		createButtons();
