@@ -264,14 +264,17 @@ $(document).ready(function(){
 				// response back from the giphy api
 				.done(function (response) {
 					
-					console.log(response);
+					// passing the response from giphy to the displayAnimals() function so that the logic for displaying the information is easier to read
+					displayAnimals(response);
 
-				});
+				}); // end ajax
 
 		} // end queryAnimals()
 
-		function displayAnimals() {
-			// body...
+		function displayAnimals(ajax_response) {
+			
+			console.log(ajax_response);
+
 		} // end displayAnimals()
 
 		function createButtons() {
