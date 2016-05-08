@@ -230,13 +230,15 @@ $(document).ready(function(){
 			}
 		];
 
+
 		// variables
-		//var ul_array = [$('#critically-endangered'), $('#endangered'), $('#vulnerable'), $('#near-threatened'), $('#added-animals')]
 		var critically_endangered = $('#critically-endangered');
 		var endangered = $('#endangered');
 		var vulnerable = $('#vulnerable');
 		var near_threatened = $('#near-threatened');
 		var added_animal = $('#added-animal');
+		var animal_gif = $('#animal-gif');
+
 
 		// functions
 
@@ -274,6 +276,21 @@ $(document).ready(function(){
 		function displayAnimals(ajax_response) {
 			
 			console.log(ajax_response);
+
+			console.log(ajax_response.data[1].rating);
+
+			// empty the animal-gif div that displays the gifs. This is so we only display the current button selected by the user.
+			$(animal_gif).empty();
+
+			var p = $('<p>');
+
+			$(p).text('a;sdfna;s');
+
+			console.log(p);
+
+			$(animal_gif).append('alsdkjf;lasdjf');
+
+			console.log(animal_gif);
 
 		} // end displayAnimals()
 
