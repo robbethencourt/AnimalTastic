@@ -246,8 +246,11 @@ $(document).ready(function(){
 			// store the passed animal data-name in the animal_to_query variable
 			var animal_to_query = animal_passed;
 
+			// the number of gifs to return
+			var number_of_gifs = 12;
+
 			// store the giphy api url in the api variable
-			var api = 'http://api.giphy.com/v1/gifs/search?q=' + animal_to_query + '&api_key=dc6zaTOxFJmzC'
+			var api = 'http://api.giphy.com/v1/gifs/search?q=' + animal_to_query + '&limit=' + number_of_gifs + '&api_key=dc6zaTOxFJmzC'
 
 			// request object to store the object to be passed to the ajax call
 			var request = {
