@@ -241,9 +241,29 @@ $(document).ready(function(){
 		// functions
 
 		// the ajax request from giphy for the animal selected
-		function queryAnimals() {
+		function queryAnimals(animal_passed) {
 			
-			console.log('queryAnimals');
+			// store the passed animal data-name in the animal_to_query variable
+			var animal_to_query = animal_passed;
+
+			// store the giphy api url in the api variable
+			var api = 'http://api.giphy.com/v1/gifs/search?q=' + animal_to_query + '&api_key=dc6zaTOxFJmzC'
+
+			// request object to store the object to be passed to the ajax call
+			var request = {
+				url: api,
+				method: 'GET'
+			};
+
+			// ajax call to the giphy api
+			$.ajax(request)
+
+				// response back from the giphy api
+				.done(function (response) {
+					
+					console.log(response);
+
+				});
 
 		} // end queryAnimals()
 
@@ -361,9 +381,12 @@ $(document).ready(function(){
 
 		// click event for each button with .animal class
 		$('#animal-list').on('click', '.animal', function () {
+
+			// grab the data name of the button clicked so we know what animal to query when we pass that to the queryAnimals() function
+			var animal_data_name = $(this).data('name');
 			
-			// call the queryAnimals function
-			queryAnimals();
+			// call the queryAnimals function wiht the name fo the animal to pass
+			queryAnimals(animal_data_name);
 
 		});
 
