@@ -242,7 +242,9 @@ $(document).ready(function(){
 
 		// the ajax request from giphy for the animal selected
 		function queryAnimals() {
-			// body...
+			
+			console.log('queryAnimals');
+
 		} // end queryAnimals()
 
 		function displayAnimals() {
@@ -347,11 +349,20 @@ $(document).ready(function(){
 
 		});
 
-		// run functions
+		// call the createButtons function when the page loads to add the buttons for the animals listed in the animals array
 		createButtons();
+
+		// click event for each button with .animal class
+		$('#animal-list').on('click', '.animal', function () {
+			
+			// call the queryAnimals function
+			queryAnimals();
+
+		});
 
 	}
 		
+	// call the main animalTastic() function at the load of the page
 	animalTastic();
 
 });
