@@ -326,9 +326,11 @@ $(document).ready(function(){
 
 		} // end createButtons()
 
-		// on click events
-		$('#add-animal-button').on('click', function () {
+		// call the createButtons function when the page loads to add the buttons for the animals listed in the animals array
+		createButtons();
 
+		function addAnimals(argument) {
+			
 			// get the value of the text box
 			var animal_to_add = $('#animal-input').val();
 
@@ -344,13 +346,18 @@ $(document).ready(function(){
 			// run create buttons so that the new button with the added animal gets added
 			createButtons();
 
+		}
+
+		// on click events
+		$('#add-animal-button').on('click', function () {
+
+			// call the addAnimals() function
+			addAnimals();
+
 			// return false so the form doesn't submit and refresh the page
 			return false;
 
 		});
-
-		// call the createButtons function when the page loads to add the buttons for the animals listed in the animals array
-		createButtons();
 
 		// click event for each button with .animal class
 		$('#animal-list').on('click', '.animal', function () {
