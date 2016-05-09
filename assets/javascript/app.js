@@ -239,6 +239,11 @@ $(document).ready(function(){
 		var added_animal = $('#added-animal');
 		var animal_gif = $('#animal-gif');
 
+		var gif_bucket_1 = $('#gif-bucket-1');
+		var gif_bucket_2 = $('#gif-bucket-2');
+		var gif_bucket_3 = $('#gif-bucket-3');
+		var gif_bucket_4 = $('#gif-bucket-4');
+
 
 		// functions
 
@@ -275,13 +280,13 @@ $(document).ready(function(){
 
 		function displayAnimals(ajax_response) {
 
-			// empty the animal-gif div that displays the gifs. This is so we only display the current button selected by the user.
-			$(animal_gif).empty();
+			// empty the gif-bucket divs that displays the gifs. This is so we only display the current button selected by the user.
+			$(gif_bucket_1).empty();
+			$(gif_bucket_2).empty();
+			$(gif_bucket_3).empty();
+			$(gif_bucket_4).empty();
 
-			// loop through the animal_response so we can add each returned gif to the screen
-			for (var i = 0; i < ajax_response.data.length; i++) {
-
-				console.log(ajax_response.data[i]);
+			function gifBucket(index_num, bucket_id) {
 				
 				// create the div to hold each animal gif with rating
 				var animal_div = $('<div>');
@@ -295,16 +300,16 @@ $(document).ready(function(){
 				var animal_img = $('<img>');
 
 				// add the image url to the image source attribute
-				animal_img.attr('src', ajax_response.data[i].images.fixed_width.url);
+				animal_img.attr('src', ajax_response.data[index_num].images.fixed_width.url);
 
 				// add an alt attribute to the image element so people with screen readers
-				animal_img.attr('alt', ajax_response.data[i].slug);
+				animal_img.attr('alt', ajax_response.data[index_num].slug);
 
 				// create a p element to hold the rating
 				var p = $('<p>');
 
 				// add the rating to the p element
-				$(p).text('Rating: ' + ajax_response.data[i].rating);
+				$(p).text('Rating: ' + ajax_response.data[index_num].rating);
 
 				// append the image element (gif) to the animal_div
 				$(animal_div).append(animal_img);
@@ -312,8 +317,41 @@ $(document).ready(function(){
 				// append the p element holding the gif rating to the animal_div
 				$(animal_div).append(p);
 
-				// append the animal_div to the animal_gif div
-				$(animal_gif).append(animal_div);
+				// append the animal_div to the gif_bucket div
+				$(bucket_id).append(animal_div);
+
+			} //  end gifBucket()
+
+			// loop through the animal_response so we can add each returned gif to the screen
+			for (var i = 0; i < ajax_response.data.length; i++) {
+
+				// put the first 3 gifs in the first gif bucket div
+				if (i < 3) {
+
+					gifBucket(i, gif_bucket_1);
+
+				} // end if
+
+				// put the 4, 5 and 6 gifs in the second gif bucket div
+				if (i > 2 && i < 6) {
+
+					gifBucket(i, gif_bucket_2);
+
+				} // end if
+
+				// put the 7, 8 and 9 gifs in the third gif bucket div
+				if (i > 5 && i < 9) {
+
+					gifBucket(i, gif_bucket_3);
+					
+				} // end if
+
+				// put the last 3 gifs in the fourth gif bucket div
+				if (i > 8) {
+
+					gifBucket(i, gif_bucket_4);
+					
+				} // end if
 
 			} // end for
 
