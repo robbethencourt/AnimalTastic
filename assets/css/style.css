@@ -3,11 +3,43 @@ p {
 	line-height: 1.7em;
 }
 
+a:link, a:visited {
+	text-decoration: underline;
+}
+
+
+/* nav */
+.navbar-inverse {
+	border-color: #2876ff;
+	background: rgba(40, 118, 255, .85);
+}
+
+	.navbar-inverse .navbar-nav > li > a:link, .navbar-inverse .navbar-nav > li > a:visited, .navbar-inverse .navbar-brand {
+		color: #e5e1df;
+		text-decoration: none;
+	}
+
+	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+		color: #fff;
+	}
+
+
 /* jumbotron */
 
 .jumbotron {
 	padding-bottom: 0;
 }
+
+	.jumbotron p {
+		margin-bottom: 0;
+	}
+
+	p.micro {
+		font-size: .8em;
+		font-style: italic;
+		margin-top: 0;
+		padding: 0 0 2em 0;
+	}
 
 	/* eliminates the gutters in bootstrap */
 	.row.no-gutters {
@@ -78,16 +110,36 @@ p {
 
 /* about */
 #about {
-	padding: 5em 0;
+	padding: 10em 0;
 	text-align: center;
+	color: #e5e1df;
+	background: #2876ff;
 }
+
+	#about a:link, #about a:visited {
+		color: #e5e1df;
+	}
+
+	#about a:hover, #about a:focus {
+		color: #fff;
+	}
 
 
 /* donate */
-.donate-container {
-	text-align: center;
+#donate {
+	padding: 10em 0;
 }
 
-	.donate-container p {
-		margin-top: 5em;
+	.donate-container {
+		text-align: center;
 	}
+
+		.donate-container p {
+			margin-top: 5em;
+		}
+
+
+/* footer */
+footer {
+	padding: 5em 0 0 0;
+}
