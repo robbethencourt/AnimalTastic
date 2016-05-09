@@ -27,8 +27,10 @@ a:link, a:visited {
 /* jumbotron */
 
 .jumbotron {
-	padding-bottom: 10px;
-	background: #e1e4ea url(../images/jumbotron-bottom-bg.jpg) repeat-x center bottom;
+	padding: 5em 0 5em 0;
+	margin-bottom: 0;
+	background: #e1e4ea url(../images/map.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 	.jumbotron p {
@@ -80,8 +82,16 @@ a:link, a:visited {
 			left: 0;
 		}
 
+		#animal-gif {
+			min-height: 350px;
+		}
+
 
 /* animal-list */
+#animal-list {
+	background: url(../images/jumbotron-bottom-bg.jpg) repeat-x center top;
+}
+
 .animal-input {
 	padding: 5em 0;
 }
