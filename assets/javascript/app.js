@@ -274,21 +274,27 @@ $(document).ready(function(){
 		} // end queryAnimals()
 
 		function displayAnimals(ajax_response) {
-			
-			console.log(ajax_response);
 
-			console.log(ajax_response.data[1].rating);
+			console.log(ajax_response);
 
 			// empty the animal-gif div that displays the gifs. This is so we only display the current button selected by the user.
 			$(animal_gif).empty();
 
+			var animal_img = $('<img>');
+
+			animal_img.attr('src', ajax_response.data[1].images.original.url);
+
+			animal_img.attr('alt', ajax_response.data[1].slug);
+
 			var p = $('<p>');
 
-			$(p).text('a;sdfna;s');
+			$(p).text(ajax_response.data[1].rating);
 
 			console.log(p);
 
-			$(animal_gif).append('alsdkjf;lasdjf');
+			$(animal_gif).append(p);
+
+			$(animal_gif).append(animal_img);
 
 			console.log(animal_gif);
 
