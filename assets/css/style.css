@@ -98,10 +98,24 @@ a:link, a:visited {
 
 	#add-animal-form input[type="text"] {
 		padding-left: .5em;
+		border: none;
+		color: #333;
+		background: #b8f2da;
+	}
+
+	#add-animal-form input[type="text"]:focus {
+		outline: none;
+		border: none;
+		color: #fff;
+		background: #2876ff;
 	}
 
 	#add-animal-form input[type="submit"] {
 		margin-left: -4px;
+	}
+
+	#add-animal-form input[type="submit"]:focus {
+		outline: none;
 	}
 
 	.animal-input button {
@@ -156,6 +170,7 @@ a:link, a:visited {
 			.btn-success, a.btn-success:link, a.btn-success:visited {
 				text-decoration: none;
 				border: none;
+				border-radius: 0;
 				background: #4ad0a0;
 			}
 
