@@ -243,6 +243,8 @@ $(document).ready(function(){
 		var gif_bucket_2 = $('#gif-bucket-2');
 		var gif_bucket_3 = $('#gif-bucket-3');
 		var gif_bucket_4 = $('#gif-bucket-4');
+		var gif_bucket_5 = $('#gif-bucket-5');
+		var gif_bucket_6 = $('#gif-bucket-6');
 
 
 		// functions
@@ -285,6 +287,8 @@ $(document).ready(function(){
 			$(gif_bucket_2).empty();
 			$(gif_bucket_3).empty();
 			$(gif_bucket_4).empty();
+			$(gif_bucket_5).empty();
+			$(gif_bucket_6).empty();
 
 			function gifBucket(index_num, bucket_id) {
 				
@@ -333,30 +337,44 @@ $(document).ready(function(){
 			for (var i = 0; i < ajax_response.data.length; i++) {
 
 				// put the first 3 gifs in the first gif bucket div
-				if (i < 3) {
+				if (i < 2) {
 
 					gifBucket(i, gif_bucket_1);
 
 				} // end if
 
 				// put the 4, 5 and 6 gifs in the second gif bucket div
-				if (i > 2 && i < 6) {
+				if (i > 1 && i < 4) {
 
 					gifBucket(i, gif_bucket_2);
 
 				} // end if
 
 				// put the 7, 8 and 9 gifs in the third gif bucket div
-				if (i > 5 && i < 9) {
+				if (i > 3 && i < 6) {
 
 					gifBucket(i, gif_bucket_3);
 					
 				} // end if
 
 				// put the last 3 gifs in the fourth gif bucket div
-				if (i > 8) {
+				if (i > 5 && i < 8) {
 
 					gifBucket(i, gif_bucket_4);
+					
+				} // end if
+
+				// put the last 3 gifs in the fourth gif bucket div
+				if (i > 7 && i < 10) {
+
+					gifBucket(i, gif_bucket_5);
+					
+				} // end if
+
+				// put the last 3 gifs in the fourth gif bucket div
+				if (i > 9) {
+
+					gifBucket(i, gif_bucket_6);
 					
 				} // end if
 
