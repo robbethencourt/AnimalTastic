@@ -69,3 +69,17 @@
 	#animal-list h5 {
 		padding-bottom: 1em;
 	}
+
+
+/* about */
+#about {
+	padding: 5em 0;
+	text-align: center;
+}
+
+	#about p {
+		line-height: 1.7em;
+	}
+
+
+/* donate */
