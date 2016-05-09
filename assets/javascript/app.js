@@ -294,13 +294,20 @@ $(document).ready(function(){
 				// add animal-div class to each of these divs
 				animal_div.addClass('animal-div');
 
-				// we may need to add an attribute to the div or maybe the image so we can pause and start it again
-
 				// create the image element to hold the gif
 				var animal_img = $('<img>');
 
-				// add the image url to the image source attribute
-				animal_img.attr('src', ajax_response.data[index_num].images.fixed_width.url);
+				// add the still image url to the image source attribute
+				animal_img.attr('src', ajax_response.data[index_num].images.fixed_width_still.url);
+
+				// add the still image url to the image source attribute
+				animal_img.attr('data-still', ajax_response.data[index_num].images.fixed_width_still.url);
+
+				// add the data-state attribute and set it to still so we can check for this on the click function and update it to 'animate' once it's been clicked
+				animal_img.attr('data-state', 'still');
+
+				// add the non still version as a data-name attribute
+				animal_img.attr('data-animate', ajax_response.data[index_num].images.fixed_width.url);
 
 				// add an alt attribute to the image element so people with screen readers
 				animal_img.attr('alt', ajax_response.data[index_num].slug);
@@ -435,7 +442,7 @@ $(document).ready(function(){
 		// call the createButtons function when the page loads to add the buttons for the animals listed in the animals array
 		createButtons();
 
-		function addAnimals(argument) {
+		function addAnimals() {
 			
 			// get the value of the text box
 			var animal_to_add = $('#animal-input').val();
@@ -452,9 +459,36 @@ $(document).ready(function(){
 			// run create buttons so that the new button with the added animal gets added
 			createButtons();
 
-		}
+		} // end addAnimals()
+
+		function playPauseGif(event, state_to_pass) {
+			
+			// if the state of the element is still
+			if (state_to_pass === 'still') {
+
+				// change the source of the element so that the gif plays
+				$(event).attr('src', $(event).attr('data-animate'));
+
+				// update the data-state attribute to animate so we can pause it on the next click
+				$(event).attr('data-state', 'animate');
+
+			// if the state of the element is not still (meaning it's probably set to animagte)
+			} else {
+
+				// update the source of the element so that the gif gets set to the still url
+				$(event).attr('src', $(event).attr('data-still'));
+
+				// update the data-state to still
+				$(event).attr('data-state', 'still');
+
+			} // end if else
+
+		} // end playPauseGif()
+
 
 		// on click events
+
+		// click event for adding an animal button to the screen
 		$('#add-animal-button').on('click', function () {
 
 			// call the addAnimals() function
@@ -463,7 +497,7 @@ $(document).ready(function(){
 			// return false so the form doesn't submit and refresh the page
 			return false;
 
-		});
+		}); // end click event on the add animal form
 
 		// click event for each button with .animal class
 		$('#animal-list').on('click', '.animal', function () {
@@ -474,9 +508,33 @@ $(document).ready(function(){
 			// call the queryAnimals function wiht the name fo the animal to pass
 			queryAnimals(animal_data_name);
 
-		});
+		}); // end click event on the animal name buttons
 
-	}
+		// click event for each gif so that it can be played or paused
+		$('#animal-gif').on('click', 'img', function () {
+
+			// store the this keyword in the e variable. Is this the best way to pass this?
+			var e = $(this);
+
+			// store the data-state of the elment clicked in the state variable
+			var state = $(this).attr('data-state');
+
+			// if statement determining the class name of the gif
+			if (state === "still") {
+
+				// call the playPauseGif() function with the this keyword and 'still' string as a parameter
+				playPauseGif(e, 'still');
+
+			} else {
+
+				// call the playPauseGif() function with the this keyword and 'animate' string as a parameter
+				playPauseGif(e, 'animate');
+
+			} // end if else
+			
+		}); // end click event on gif
+
+	} // end animalTastic()
 		
 	// call the main animalTastic() function at the load of the page
 	animalTastic();
