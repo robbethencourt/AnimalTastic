@@ -4,40 +4,68 @@
 	padding-bottom: 0;
 }
 
-/* eliminates the gutters in bootstrap */
-.row.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+	/* eliminates the gutters in bootstrap */
+	.row.no-gutters {
+	  margin-right: 0;
+	  margin-left: 0;
+	}
+	.row.no-gutters > [class^="col-"],
+	.row.no-gutters > [class*=" col-"] {
+	  padding-right: 0;
+	  padding-left: 0;
+	}
+
+		.animal-div {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.animal-div img {
+			width: 100%;
+			cursor: pointer;
+		}
+
+		.animal-div p {
+			transition: .3s;
+			position: absolute;
+			bottom: 0;
+			left: -100%;
+			width: 100%;
+			margin: 0;
+			padding: .5em;
+			color: #fff;
+			background: rgba(0, 0, 0, .8);
+		}
+
+		.animal-div:hover p, .animal-div:focus p {
+			transition: .3s;
+			left: 0;
+		}
+
+
+/* animal-list */
+.animal-input {
+	padding: 5em 0;
 }
-.row.no-gutters > [class^="col-"],
-.row.no-gutters > [class*=" col-"] {
-  padding-right: 0;
-  padding-left: 0;
-}
 
-	.animal-div {
-		position: relative;
-		overflow: hidden;
+	.animal-input h3 {
+		margin-top: 0;
+		padding-top: 0;
 	}
 
-	.animal-div img {
-		width: 100%;
-		cursor: pointer;
+	.animal-input button {
+		width: 48%;
+		float: left;
 	}
 
-	.animal-div p {
-		transition: .3s;
-		position: absolute;
-		bottom: 0;
-		left: -100%;
-		width: 100%;
-		margin: 0;
-		padding: .5em;
-		color: #fff;
-		background: rgba(0, 0, 0, .8);
+	.animal-input button:nth-of-type(odd) {
+		margin-right: 2%;
 	}
 
-	.animal-div:hover p, .animal-div:focus p {
-		transition: .3s;
-		left: 0;
+	.animal-input button:nth-of-type(even) {
+		margin-left: 2%;
+	}
+
+	#animal-list h5 {
+		padding-bottom: 1em;
 	}
