@@ -14,7 +14,7 @@
 		<!-- My Styles -->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
-<body>
+<body id="top">
 
 	<!-- nav -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,13 +25,13 @@
     				<span class="icon-bar"></span>
     				<span class="icon-bar"></span> 
   				</button>
-  				<a class="navbar-brand" href="#">AnimalTastic</a>
+  				<a class="navbar-brand" href="#top">AnimalTastic</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
   				<ul class="nav navbar-nav navbar-right">
-    				<li><a class="active" href="index.html">Animals</a></li>
-    				<li><a href="about.html">About</a></li>
-    				<li><a href="contact.html">Donate</a></li>
+    				<li><a class="active" href="#animal-list">Animals</a></li>
+    				<li><a href="#about">About</a></li>
+    				<li><a href="#donate">Donate</a></li>
   				</ul>
 			</div>
 		</div>
@@ -58,10 +58,8 @@
 		</div>
 	</div>
 
-	<!-- wrap the content in a container -->
+	<!-- animal-list -->
 	<div class="container" id="animal-list">
-
-		<!-- animals list -->
 		<div class="row">
 			<div class="col-sm-6">
 				<h3>Add Other Animals to Get Gif of</h3>
@@ -96,15 +94,32 @@
 				<div id="near-threatened" class="list-group"></div>
 			</div>
 		</div>
+	</div>
 
-		<!-- about -->
-		<h2>About AnimalTastic</h2>
-		<p>Some stuff about AnimalTastic and how the use of gif will hope to raise awareness for endangered animals.</p>
+	<!-- about -->
+	<div id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<h2>About AnimalTastic</h2>
+				</div>
+				<div class="col-xs-6">
+					<p>Some stuff about AnimalTastic and how the use of gif will hope to raise awareness for endangered animals.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<!-- donate -->
-		<h2>Donate to the World Wildlife Fund</h2>
-		<p><a href="https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly&s_src=AWG1610SS912&_ga=1.186797992.1805934068.1462546059" class="btn btn-success" target="_blank">DONATE</a></p>
-
+	<!-- donate -->
+	<div id="donate">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3">
+					<h2>Donate to the World Wildlife Fund</h2>
+					<p><a href="https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly&s_src=AWG1610SS912&_ga=1.186797992.1805934068.1462546059" class="btn btn-success" target="_blank">DONATE</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- footer -->
