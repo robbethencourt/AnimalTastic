@@ -1,0 +1,43 @@
+/* jumbotron */
+
+.jumbotron {
+	padding-bottom: 0;
+}
+
+/* eliminates the gutters in bootstrap */
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+	.animal-div {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.animal-div img {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	.animal-div p {
+		transition: .3s;
+		position: absolute;
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		margin: 0;
+		padding: .5em;
+		color: #fff;
+		background: rgba(0, 0, 0, .8);
+	}
+
+	.animal-div:hover p, .animal-div:focus p {
+		transition: .3s;
+		left: 0;
+	}
