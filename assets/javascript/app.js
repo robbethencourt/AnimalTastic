@@ -295,7 +295,7 @@ $(document).ready(function(){
 				var animal_img = $('<img>');
 
 				// add the image url to the image source attribute
-				animal_img.attr('src', ajax_response.data[i].images.original.url);
+				animal_img.attr('src', ajax_response.data[i].images.fixed_width.url);
 
 				// add an alt attribute to the image element so people with screen readers
 				animal_img.attr('alt', ajax_response.data[i].slug);
