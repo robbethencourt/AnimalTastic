@@ -275,28 +275,47 @@ $(document).ready(function(){
 
 		function displayAnimals(ajax_response) {
 
-			console.log(ajax_response);
-
 			// empty the animal-gif div that displays the gifs. This is so we only display the current button selected by the user.
 			$(animal_gif).empty();
 
-			var animal_img = $('<img>');
+			// loop through the animal_response so we can add each returned gif to the screen
+			for (var i = 0; i < ajax_response.data.length; i++) {
 
-			animal_img.attr('src', ajax_response.data[1].images.original.url);
+				console.log(ajax_response.data[i]);
+				
+				// create the div to hold each animal gif with rating
+				var animal_div = $('<div>');
 
-			animal_img.attr('alt', ajax_response.data[1].slug);
+				// add animal-div class to each of these divs
+				animal_div.addClass('animal-div');
 
-			var p = $('<p>');
+				// we may need to add an attribute to the div or maybe the image so we can pause and start it again
 
-			$(p).text(ajax_response.data[1].rating);
+				// create the image element to hold the gif
+				var animal_img = $('<img>');
 
-			console.log(p);
+				// add the image url to the image source attribute
+				animal_img.attr('src', ajax_response.data[i].images.original.url);
 
-			$(animal_gif).append(p);
+				// add an alt attribute to the image element so people with screen readers
+				animal_img.attr('alt', ajax_response.data[i].slug);
 
-			$(animal_gif).append(animal_img);
+				// create a p element to hold the rating
+				var p = $('<p>');
 
-			console.log(animal_gif);
+				// add the rating to the p element
+				$(p).text('Rating: ' + ajax_response.data[i].rating);
+
+				// append the image element (gif) to the animal_div
+				$(animal_div).append(animal_img);
+
+				// append the p element holding the gif rating to the animal_div
+				$(animal_div).append(p);
+
+				// append the animal_div to the animal_gif div
+				$(animal_gif).append(animal_div);
+
+			} // end for
 
 		} // end displayAnimals()
 
