@@ -67,7 +67,8 @@ a:link, a:visited {
 .jumbotron {
 	padding: 7em 0 5em 0;
 	margin-bottom: 0;
-	background: url(../images/aniloop-symbol-color.png) no-repeat center center;
+	background: url(../images/aniloop-symbol-color.png) no-repeat center bottom;
+	background-size: 400px 400px;
 }
 
 	.jumbotron p {
@@ -78,7 +79,7 @@ a:link, a:visited {
 		font-size: .85em;
 		font-style: italic;
 		margin-top: 0;
-		padding: 0 0 20em 0;
+		padding: 0 0 2em 0;
 	}
 
 	/* eliminates the gutters in bootstrap */
@@ -120,7 +121,7 @@ a:link, a:visited {
 		}
 
 		#animal-gif {
-			min-height: 400px;
+			min-height: 200px;
 		}
 
 
@@ -251,5 +252,20 @@ footer {
 	.navbar-right {
 		margin-top: 5px;
 	}
+
+
+	/* jumbotron */
+	.jumbotron {
+		background: url(../images/aniloop-symbol-color.png) no-repeat center center;
+		background-size: 700px 700px;
+	}
+
+		p.micro {
+			padding: 0 0 20em 0;
+		}
+
+		#animal-gif {
+			min-height: 400px;
+		}
 
 }
