@@ -10,38 +10,63 @@ a:link, a:visited {
 
 /* nav */
 .navbar-inverse {
+	height: 70px;
 	border-color: #2876ff;
 	background: rgba(40, 118, 255, .9);
 }
 
+	.navbar-brand {
+	    float: left;
+	    height: 50px;
+	    padding: 0 15px;
+	}
+
+	.nav-brand-symbol {
+		-webkit-transition: -webkit-transform .8s ease-in-out;
+  		transition: transform .8s ease-in-out;
+		width: 8%;
+		margin: 4px 10px 0 -2px;
+		float: left;
+	}
+
+	.navbar-brand:hover .nav-brand-symbol {
+		-webkit-transition: -webkit-transform .8s ease-in-out;
+  		transition: transform .8s ease-in-out;
+		transform: rotate(360deg);
+	}
+
+	.brand-name {
+		display: inline-block;
+		margin: 25px 0 0 5px;
+	}
+
 	.navbar-inverse .navbar-nav > li > a:link, .navbar-inverse .navbar-nav > li > a:visited, .navbar-inverse .navbar-brand {
-		color: #e5e1df;
+		color: #fff;
 		text-decoration: none;
 	}
 
 	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-		color: #fff;
+		color: #e5e1df;
 	}
 
 
 /* jumbotron */
 
 .jumbotron {
-	padding: 5em 0 5em 0;
+	padding: 7em 0 5em 0;
 	margin-bottom: 0;
-	background: #e1e4ea url(../images/map.jpg) no-repeat center center;
-	background-size: cover;
+	background: url(../images/aniloop-symbol-color.png) no-repeat center center;
 }
 
 	.jumbotron p {
-		margin-bottom: 0;
+		margin: -1em 0 0 0;
 	}
 
 	p.micro {
-		font-size: .8em;
+		font-size: .85em;
 		font-style: italic;
 		margin-top: 0;
-		padding: 0 0 2em 0;
+		padding: 0 0 20em 0;
 	}
 
 	/* eliminates the gutters in bootstrap */
@@ -83,7 +108,7 @@ a:link, a:visited {
 		}
 
 		#animal-gif {
-			min-height: 350px;
+			min-height: 400px;
 		}
 
 
@@ -166,7 +191,8 @@ a:link, a:visited {
 /* donate */
 #donate {
 	padding: 10em 0;
-	background: #e5e1df;
+	background: #e1e4ea url(../images/map.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 	.donate-container {
@@ -192,4 +218,14 @@ a:link, a:visited {
 /* footer */
 footer {
 	padding: 2em 0;
+}
+
+
+/* media querries */
+@media (min-width: 768px) { 
+
+	.navbar-right {
+		margin-top: 7px;
+	}
+
 }
