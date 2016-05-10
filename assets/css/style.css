@@ -30,7 +30,7 @@ a:link, a:visited {
 	.navbar-brand:hover .nav-brand-symbol {
 		-webkit-transition: -webkit-transform 2s;
   		transition: transform 2s;
-		transform: rotate(360deg);
+		transform: rotate(-360deg);
 	}
 
 	.brand-name {
@@ -68,9 +68,9 @@ a:link, a:visited {
 /* jumbotron */
 
 .jumbotron {
-	padding: 7em 0 5em 0;
+	padding: 6em 0 5em 0;
 	margin-bottom: 0;
-	background: url(../images/aniloop-symbol-color.png) no-repeat center bottom;
+	background: url(../images/aniloop-symbol-color.png) no-repeat center 0px;
 	background-size: 400px 400px;
 }
 
@@ -128,13 +128,13 @@ a:link, a:visited {
 		}
 
 
-/* animal-list */
+/* animal-list 
 #animal-list {
 	background: url(../images/jumbotron-bottom-bg.jpg) repeat-x center top;
-}
+} */
 
 .animal-input {
-	padding: 5em 0;
+	padding: 0 0 2em 0;
 }
 
 	.animal-input h3 {
@@ -282,6 +282,7 @@ a:link, a:visited {
 /* footer */
 footer {
 	padding: 2em 0;
+	background: url(../images/jumbotron-bottom-bg.jpg) repeat-x center top;
 }
 
 
@@ -307,12 +308,12 @@ footer {
 
 	/* jumbotron */
 	.jumbotron {
-		background: url(../images/aniloop-symbol-color.png) no-repeat center center;
+		background: url(../images/aniloop-symbol-color.png) no-repeat center 0px;
 		background-size: 700px 700px;
 	}
 
 		p.micro {
-			padding: 0 0 20em 0;
+			padding: 0 0 2em 0;
 		}
 
 		#animal-gif {
