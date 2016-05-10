@@ -186,6 +186,54 @@ a:link, a:visited {
 		padding-bottom: 1em;
 	}
 
+	#animal-list .list-group-item:first-child, #animal-list .list-group-item:last-child {
+		border-radius: 0;
+	}
+
+	#critically-endangered button {
+		color: #fff;
+		border: none;
+		background: #ff0000;
+	}
+
+	#critically-endangered button:hover {
+		color: #ff0000;
+		background: #fff;
+	}
+
+	#endangered button {
+		color: #fff;
+		border: none;
+		background: #FF2121;
+	}
+
+	#endangered button:hover {
+		color: #ff0000;
+		background: #fff;
+	}
+
+	#vulnerable button {
+		color: #fff;
+		border: none;
+		background: #FF4545;
+	}
+
+	#vulnerable button:hover {
+		color: #ff0000;
+		background: #fff;
+	}
+
+	#near-threatened button {
+		color: #fff;
+		border: none;
+		background: #FF6B6B;
+	}
+
+	#near-threatened button:hover {
+		color: #ff0000;
+		background: #fff;
+	}	
+
 
 /* about */
 #about {
