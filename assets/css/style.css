@@ -20,16 +20,16 @@ a:link, a:visited {
 	}
 
 	.nav-brand-symbol {
-		-webkit-transition: -webkit-transform .8s ease-in-out;
-  		transition: transform 2s ease-in-out;
+		-webkit-transition: -webkit-transform 2s;
+  		transition: transform 2s;
 		width: 16%;
 		margin: 0;
 		float: left;
 	}
 
 	.navbar-brand:hover .nav-brand-symbol {
-		-webkit-transition: -webkit-transform .8s ease-in-out;
-  		transition: transform 2s ease-in-out;
+		-webkit-transition: -webkit-transform 2s;
+  		transition: transform 2s;
 		transform: rotate(360deg);
 	}
 
@@ -53,12 +53,15 @@ a:link, a:visited {
 	}
 
 	.navbar-inverse .navbar-nav > li > a:link, .navbar-inverse .navbar-nav > li > a:visited, .navbar-inverse .navbar-brand {
+		transition: .3s;
 		color: #fff;
 		text-decoration: none;
 	}
 
 	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-		text-decoration: underline;
+		transition: .3s;
+		color: #2876ff;
+		background: #fff;
 	}
 
 
