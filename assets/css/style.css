@@ -1,4 +1,8 @@
 /* global styles */
+body {
+	font-family: helvetica, arial, sans-serif;
+}
+
 p {
 	line-height: 1.7em;
 }
@@ -17,6 +21,8 @@ a:link, a:visited {
 	.navbar-brand {
 		width: 300px;
 	    padding: 0 15px;
+	    font-size: 2em;
+	    font-family: 'Josefin Sans', sans-serif;
 	}
 
 	.nav-brand-symbol {
@@ -35,7 +41,7 @@ a:link, a:visited {
 
 	.brand-name {
 		display: inline-block;
-		margin: 15px 0 0 10px;
+		margin: 12px 0 0 10px;
 	}
 
 	/* hamburger menu on smaller screen sizes */
@@ -132,7 +138,7 @@ a:link, a:visited {
 	padding: 0 0 2em 0;
 }
 
-	.animal-input h3 {
+	.animal-input h4 {
 		margin-top: 0;
 		padding-top: 0;
 	}
@@ -178,7 +184,7 @@ a:link, a:visited {
 	}
 
 	#animal-list h5 {
-		padding-bottom: 1em;
+		padding-bottom: .5em;
 	}
 
 	#animal-list .list-group-item:first-child, #animal-list .list-group-item:last-child {
@@ -242,6 +248,8 @@ a:link, a:visited {
 		padding: 8px 0 0 60px;
 		padding-top: 10px;
 		padding-left: 60px;
+		font-size: 2em;
+	    font-family: 'Josefin Sans', sans-serif;
 		background: url(../images/aniloop-symbol-white.png) no-repeat left center;
 		background-size: 50px 50px;
 	}
@@ -280,7 +288,7 @@ a:link, a:visited {
 
 /* footer */
 footer {
-	padding: 2em 0;
+	padding: 2em 0 1.5em 0;
 	background: url(../images/footer-bottom-bg.jpg) repeat-x center top;
 }
 
@@ -298,7 +306,7 @@ footer {
 	}
 
 	.brand-name {
-		margin-top: 22px;
+		margin-top: 20px;
 	}
 
 	.navbar-right {
