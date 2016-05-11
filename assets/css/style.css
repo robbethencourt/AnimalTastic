@@ -267,10 +267,6 @@ a:link, a:visited {
 	background-size: cover;
 }
 
-	.donate-container {
-		text-align: center;
-	}
-
 		.donate-container p {
 			margin-top: 5em;
 		}
@@ -331,5 +327,11 @@ footer {
 		#animal-gif {
 			min-height: 400px;
 		}
+
+	
+	/* donate */
+	.donate-container {
+		text-align: center;
+	}
 
 }
