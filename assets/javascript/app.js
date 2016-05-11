@@ -438,6 +438,13 @@ $(document).ready(function(){
 
 						break;
 
+					// if no other option is selected then default adding to the added_animal section
+					default:
+
+						animalsToList(added_animal);
+
+						break;
+
 				} // end switch
 
 				function animalsToList(ul_element) {
@@ -568,14 +575,17 @@ $(document).ready(function(){
 
 	   // animate
 	   $('html, body').animate({
+
 	       scrollTop: $(hash).offset().top
+
 	     }, 300, function(){
 
 	       // when done, add hash to url
 	       // (default click behaviour)
 	       window.location.hash = hash;
-	     });
 
-	});
+	     }); // end animate
 
-});
+	}); // end scroll script
+
+}); // end jQuery document ready
