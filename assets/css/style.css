@@ -70,7 +70,7 @@ a:link, a:visited {
 .jumbotron {
 	padding: 6em 0 5em 0;
 	margin-bottom: 0;
-	background: url(../images/aniloop-symbol-color.png) no-repeat center 0px;
+	background: url(../images/aniloop-symbol-color.png) no-repeat bottom center;
 	background-size: 400px 400px;
 }
 
@@ -308,9 +308,13 @@ footer {
 
 	/* jumbotron */
 	.jumbotron {
-		background: url(../images/aniloop-symbol-color.png) no-repeat center 0px;
-		background-size: 700px 700px;
+		background: url(../images/aniloop-symbol-color.png) no-repeat bottom center;
+		background-size: 550px 550px;
 	}
+
+		.jumbotron p {
+			padding-top: .5em;
+		}
 
 		p.micro {
 			padding: 0 0 2em 0;
