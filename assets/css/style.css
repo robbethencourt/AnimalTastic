@@ -238,10 +238,18 @@ a:link, a:visited {
 /* about */
 #about {
 	padding: 10em 0;
-	text-align: center;
 	color: #e5e1df;
 	background: #2876ff;
 }
+
+	.aniloop-symbol {
+		height: 50px;
+		padding: 8px 0 0 60px;
+		padding-top: 10px;
+		padding-left: 60px;
+		background: url(../images/aniloop-symbol-white.png) no-repeat left center;
+		background-size: 50px 50px;
+	}
 
 	#about a:link, #about a:visited {
 		color: #e5e1df;
